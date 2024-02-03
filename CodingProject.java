@@ -313,13 +313,19 @@ public class CodingProject {
 		
 		//Comparing the take-home amount from each job to see which job will have the best net pay. 
 		if (netPay1 > netPay2) {
-			System.out.println("Job in seattle!");
+			System.out.println("Net Pay for job in Portland = " + netPay1);
+			System.out.println("Net Pay for job in Seattle = " + netPay2);
+			System.out.println("Job in portland!");
 		}
 		else if(netPay1 == netPay2) {
 			//If the net pay from both jobs happens to be the same, I can pick based on job preference. 
+			System.out.println("Net Pay for job in Portland = " + netPay1);
+			System.out.println("Net Pay for job in Seattle = " + netPay2);
 			System.out.println("Eenie meenie mynie mo");
 		}else {
-			System.out.println("Job in portland!");
+			System.out.println("Net Pay for job in Portland = " + netPay1);
+			System.out.println("Net Pay for job in Seattle = " + netPay2);
+			System.out.println("Job in seattle!");
 		}
 		
 		
@@ -437,6 +443,7 @@ public class CodingProject {
 		}
 		
 		//Finding the average of both arrays by diving the sums by the lengths of each array
+		
 		average = sum / arr1.length;
 		average2 = sum2 / arr2.length;
 		
@@ -470,6 +477,15 @@ public class CodingProject {
 	//Declaring a method called takeHome that takes three doubles and returns a double
 	public static double takeHome(double gross, double tax, double gasMoney) {
 		
+		
+		//I am using an if statement here to make sure that the tax amount isn't zero because I don't want my net pay to end up being negative. 
+		//(If you multiply by zero and then subtract something from that, the total is going to be negative.)
+		if(tax == 0.0) {
+			
+			tax = tax + 1.0;
+			
+		}
+
 		//Finding the amount after income tax
 		double afterTax = gross * tax;
 		
